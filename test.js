@@ -1,7 +1,8 @@
 const feathers = require('@feathersjs/feathers');
 const express = require('@feathersjs/express');
-const { expect } = require('chai');
 const versionChecker = require('./src/index.js');
+const expect = require('chai').expect;
+
 
 describe('Service', () => {
   describe('Failed setup', () => {
