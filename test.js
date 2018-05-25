@@ -21,13 +21,12 @@ describe('Service', () => {
       versions: { web: '1.2.3' },
       servicePath: 'versions',
     };
+
     app.set('versioning', options);
+    app.configure(versionChecker);
+    const service = app.service(options.servicePath);
 
     it('should add the service', () => {
-      app.configure(versionChecker);
-
-      const service = app.service(options.servicePath);
-
       expect(service).to.be.ok;
     });
   });
