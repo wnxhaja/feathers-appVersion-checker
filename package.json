@@ -2,7 +2,7 @@
   "name": "feathers-appversion-checker",
   "version": "0.1.0",
   "description": "Service for versions",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,6 @@
     "version",
     "checker"
   ],
-  "author": "Abdul Jalil Laguindab",
+  "author": "Abdul Jalil Laguindab <wnxhaja@gmail.com>",
   "license": "ISC"
 }
