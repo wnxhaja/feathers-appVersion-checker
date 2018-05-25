@@ -1,7 +1,7 @@
 {
   "name": "feathers-appversion-checker",
   "version": "0.1.0",
-  "description": "Service for versions",
+  "description": "Feathersjs service for app versions",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha ./test.js"
