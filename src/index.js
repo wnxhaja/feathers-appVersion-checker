@@ -4,11 +4,13 @@ module.exports = function feathersAppVersionChecker(app) {
   const versioning = app.get('versioning');
   if (!versioning) throw new Error('Versioning is not set');
 
+  const { servicePath, versions } = versioning;
+
   const serviceOptions = {
-    versions: versioning.versions,
+    versions,
   };
 
-  app.use(versioning.servicePath, createService(serviceOptions));
+  app.use(servicePath, createService(serviceOptions));
 
-  app.service(versioning.servicePath);
+  app.service(servicePath);
 };
