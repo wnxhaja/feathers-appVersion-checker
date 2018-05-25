@@ -18,13 +18,13 @@ class Service {
 
     if ((Object.keys(query).length === 0) && (query.constructor === Object)) {
       return this.versions.map(item => item);
-    };
+    }
 
     return [];
   }
 }
 
-module.exports = function(options) {
+module.exports = function createService(options) {
   return new Service(options);
 };
 

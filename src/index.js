@@ -1,13 +1,12 @@
 const createService = require('./Service');
 
-module.exports = function(app) {
-  const { versions, servicePath } = app.get('versioning');
+module.exports = function feathersAppVersionChecker(app) {
+  const versioning = app.get('versioning');
+  if (!versioning) throw new Error('Versioning is not set');
 
-  if (!versions) throw new Error('Versions is requied');
-  if (!servicePath) throw new Error('Service path is required');
+  const { servicePath, versions } = versioning;
 
   const serviceOptions = {
-    name: servicePath,
     versions,
   };
 
