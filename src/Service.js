@@ -11,7 +11,7 @@ class Service {
     this.app = app;
   }
 
-  find(params) {
+  async find(params) {
     const { query } = params;
 
     if (query.version) return [this.versions[query.version]];
