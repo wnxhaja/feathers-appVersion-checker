@@ -19,7 +19,7 @@ const versionChecker = require('feathers-appVersion-checker');
 const app = express(feathers());
 
 const options = {
-      versions: { web: '1.2.3' },
+      versions: { web: '1.2.3', app:'3.2.1' },
       servicePath: 'versions',
     };
 
@@ -38,4 +38,8 @@ app.service('versions').hooks({
   ...
  }
 });
+
+// on client side (via socket)
+app.service('versions').find({}) // returns [{ web: '1.2.3' }, { app: '3.2.1' }]
+app.service('versions').find({ version: 'web' }) // returns { web: '1.2.3' }
 ```
